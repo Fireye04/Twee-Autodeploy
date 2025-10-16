@@ -1,5 +1,6 @@
 name: Twee Autodeploy
 description: Automatically build and host a twee project to github pages. Branches included! 
+icon: arrow-up-circle
 
 on:
   push:
