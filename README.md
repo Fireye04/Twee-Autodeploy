@@ -10,7 +10,7 @@ Put all of your source files (`.tw`, `.js`, `.css`, etc...) into a `/source/` fo
 Make sure a `/storyformats/` folder is located on your repository's root, containing the [sugarcube-2 story format](https://www.motoslave.net/sugarcube/2/docs/) like so: `/storyformats/sugarcube-2/` (Make sure it's unzipped and [spelled correctly](https://www.motoslave.net/tweego/docs/#getting-started-story-formats)!)
 - The format can be downloaded here: https://www.motoslave.net/sugarcube/2/.
 
-Finally, make a `.github/workflows/autodeploy.yml` file, and write something along these lines inside:
+Finally, make a `/.github/workflows/autodeploy.yml` file, and write something along these lines inside:
 
 ```yml
 name: Autodeploy
@@ -32,7 +32,13 @@ And you should be good to go! Enjoy!
 
 ## Can I use another storyformat that isn't sugarcube-2?
 
-At the moment, no, though it would be very easy to add. PRs are welcome! Otherwise I'll try get around to it eventually.
+At the moment, no, though it would be very easy to add. PRs are welcome! Otherwise I'll try get around to it eventually. 
+
+Until then, you can run legacy.yaml with a different tweego command.
+
+### Legacy.yaml
+
+Want to run this locally without crying about compound actions? Just copy [legacy.yml](https://github.com/Fireye04/Twee-Autodeploy/blob/main/legacy.yml) into `/.github/workflows/` and it should work as well. Though I won't necessarily be fully maintaining `legacy.yml` so keep in mind it might die at some point.
 
 ## Help the action passed but my website is blank!
 
@@ -53,6 +59,7 @@ If this is really annoying for you, you can place an `index.html` file directly 
 ```
 
 This can definitely be fixed as well, but will be a harder solve than the story formats. Of course, daring adventurers are more than welcome to take a crack at it.
+
 
 ## I want to contribute!
 
