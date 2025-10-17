@@ -4,14 +4,9 @@ branding:
   icon: arrow-up-circle
   color: purple
 
-
-
-  
-
 on:
-  push:
   workflow_call:
-    inputs:
+    secrets:
       github_token:
         description: Github access token
         required: true
@@ -20,7 +15,6 @@ on:
         description: Branch targetted by this run
         value: ${{ jobs.build.outputs.branch }}
   
-
 jobs:
   build:
     outputs:
@@ -49,7 +43,7 @@ jobs:
       - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ inputs.github_token  }}
+          github_token: ${{ secrets.github_token  }}
           publish_branch: gh-pages
           publish_dir: ./
           destination_dir: ${{ outputs.branch }}
