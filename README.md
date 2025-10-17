@@ -28,7 +28,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-And you should be good to go! Enjoy!
+And you should be good to go! Branches will deploy to a subdirectory of the base pages url like so: myusername.github.io/mysickproject/branch-name 
+
+Enjoy!
 
 ## Can I use another storyformat that isn't sugarcube-2?
 
