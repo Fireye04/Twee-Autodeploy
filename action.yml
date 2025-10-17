@@ -3,9 +3,9 @@ description: Automatically build and host a twee project to github pages. Branch
 branding:
   icon: arrow-up-circle
 
-secrets:
-  GITHUB_TOKEN:
-    description: GitHub Personal Access Token
+inputs:
+  github_token:
+    description: Github access token
     required: true
 
 on:
@@ -37,7 +37,7 @@ jobs:
       - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN  }}
+          github_token: ${{ inputs.github_token  }}
           publish_branch: gh-pages
           publish_dir: ./
           destination_dir: ${{ steps.extract_branch.outputs.branch }}
