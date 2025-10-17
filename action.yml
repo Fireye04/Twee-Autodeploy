@@ -8,14 +8,8 @@ inputs:
   github_token:
     description: Github access token
     required: true
-outputs:
-  branch:
-    description: Branch targetted by this run
-    value: ${{ jobs.build.outputs.branch }}
   
 runs:
-  outputs:
-    branch: ${{ steps.extract_branch.outputs.branch}}
   using: composite
   steps:
     - uses: actions/checkout@v4
@@ -36,6 +30,7 @@ runs:
         repo: tmedwards/tweego
         chmod: 0775
     - run : tweego source -o index.html
+      shell: bash
 
     - name: Deploy to Pages
       uses: peaceiris/actions-gh-pages@v4
@@ -43,4 +38,4 @@ runs:
         github_token: ${{ inputs.github_token  }}
         publish_branch: gh-pages
         publish_dir: ./
-        destination_dir: ${{ outputs.branch }}
+        destination_dir: ${{ steps.extract_branch.outputs.branch }}
