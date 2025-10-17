@@ -2,17 +2,29 @@ name: Twee Autodeploy
 description: Automatically build and host a twee project to github pages. Branches included! 
 branding:
   icon: arrow-up-circle
+  color: purple
 
-inputs:
-  github_token:
-    description: Github access token
-    required: true
+
+
+  
 
 on:
   push:
+  workflow_call:
+    inputs:
+      github_token:
+        description: Github access token
+        required: true
+    outputs:
+      branch:
+        description: Branch targetted by this run
+        value: ${{ jobs.build.outputs.branch }}
+  
 
 jobs:
   build:
+    outputs:
+      branch: ${{ steps.extract_branch.outputs.branch}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,4 +52,4 @@ jobs:
           github_token: ${{ inputs.github_token  }}
           publish_branch: gh-pages
           publish_dir: ./
-          destination_dir: ${{ steps.extract_branch.outputs.branch }}
+          destination_dir: ${{ outputs.branch }}
