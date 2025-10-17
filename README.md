@@ -42,7 +42,7 @@ Want to run this locally without crying about compound actions? Just copy [legac
 
 ## Help the action passed but my website is blank!
 
-This is a current drawback of the action's multi branch support. Not to worry, your compiled game is accessible! Just look under the name of your main branch. eg: myusername.github.io/sickproject/main
+This is a current drawback of the action's multi branch support. Not to worry, your compiled game is accessible! Just look under the name of your main branch. eg: myusername.github.io/sickproject/\*main\* (asterisks added for \*extra effect\*)
 
 If this is really annoying for you, you can place an `index.html` file directly in the root of the generated gh-pages branch with the following content (substituting your urls of course), redirecting the viewer to the proper location:
 
