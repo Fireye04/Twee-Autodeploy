@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Twee Autodeploy
-        uses: Fireye04/Twee-Autodeploy@0.1.0
+        uses: Fireye04/Twee-Autodeploy@0.1.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
