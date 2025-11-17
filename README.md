@@ -18,6 +18,9 @@ name: Autodeploy
 on:
   push:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
